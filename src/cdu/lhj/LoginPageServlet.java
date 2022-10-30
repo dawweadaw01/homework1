@@ -1,6 +1,5 @@
 package cdu.lhj;
 
-import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
@@ -8,7 +7,7 @@ import java.io.PrintWriter;
 @WebServlet(name = "LoginPageServlet", value = "/loginPage")
 public class LoginPageServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws  IOException {
         //读取cookie
         String username = "";
         String password = "";
@@ -31,7 +30,7 @@ public class LoginPageServlet extends HttpServlet {
         out.println("<title>用户登录</title>");
         out.println("</head>");
         out.println("<body>");
-        out.println("<h1>用户登录</h1>");
+        out.println("<h1>用户登录大大大大大大</h1>");
         out.println("<form action='login' method='post'>");
         out.println("用户名：<input type='text' name='username' value='"+username+"'><br>");
         out.println("密码： <input type='password' name='password' value='"+password+"'><br>");

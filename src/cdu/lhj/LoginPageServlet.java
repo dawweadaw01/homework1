@@ -27,7 +27,7 @@ public class LoginPageServlet extends HttpServlet {
         out.println("<html lang='en'>");
         out.println("<head>");
         out.println("<meta charset='UTF-8'>");
-        out.println("<title>用户登录</title>");
+        out.println("<title>用户登录差不多得了😓</title>");
         out.println("</head>");
         out.println("<body>");
         out.println("<h1>用户登录</h1>");

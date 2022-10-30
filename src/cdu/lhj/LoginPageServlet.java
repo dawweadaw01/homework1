@@ -30,8 +30,7 @@ public class LoginPageServlet extends HttpServlet {
         out.println("<title>用户登录</title>");
         out.println("</head>");
         out.println("<body>");
-        out.println("<h1>用户登录hotfix1</h1>");
-        out.println("<h1>用户登录hotfix2</h1>");
+        out.println("<h1>用户登录</h1>");
         out.println("<form action='login' method='post'>");
         out.println("用户名：<input type='text' name='username' value='"+username+"'><br>");
         out.println("密码： <input type='password' name='password' value='"+password+"'><br>");

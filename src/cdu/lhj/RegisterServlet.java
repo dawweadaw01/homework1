@@ -28,7 +28,6 @@ public class RegisterServlet extends HttpServlet {
 
         String driver = "com.mysql.cj.jdbc.Driver";  //驱动程序名称
         String url = "jdbc:mysql://localhost:3306/mydb?user=root&password=123456";
-        System.out.println(username+password+sex+age+hobby);
         try {
             //加载驱动程序
             Class.forName(driver).newInstance();

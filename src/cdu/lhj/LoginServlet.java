@@ -18,10 +18,10 @@ public class LoginServlet extends HttpServlet {
         //处理的cookie
         Cookie cUser = new Cookie("username", username);
         Cookie cPwd = new Cookie("password", password);
-        if(saveUser != null && saveUser.equals("on")){
-            cUser.setMaxAge(60*60*24);
-            cPwd.setMaxAge(60*60*24);
-        }else{
+        if (saveUser != null && saveUser.equals("on")) {
+            cUser.setMaxAge(60 * 60 * 24);
+            cPwd.setMaxAge(60 * 60 * 24);
+        } else {
             cUser.setMaxAge(0);
             cPwd.setMaxAge(0);
         }
@@ -31,14 +31,14 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
         //判断验证码是否为空，是否正确
         String validCode = (String) session.getAttribute("validCode");
-        if (validCode == null|| validCode.equals("") || !validCode.equalsIgnoreCase(inputCode)) {
+        if (validCode == null || validCode.equals("") || !validCode.equalsIgnoreCase(inputCode)) {
             //验证码错误
             request.setAttribute("msg", "验证码错误");
             response.sendRedirect("loginPage");
             return;
         }
         //判断账号密码是否为空
-        if (username == null || password == null||username.equals("")||password.equals("")) {
+        if (username == null || password == null || username.equals("") || password.equals("")) {
             //账号密码为空
             response.sendRedirect("loginPage");
             return;

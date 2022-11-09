@@ -24,6 +24,7 @@ public class SuccessServlet extends HttpServlet {
         //获取session中的用户名
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
+        System.out.println("username = " + username);
         out.println("欢迎您，" + username);
         //注销
         out.println("<a href='logout'>注销</a>");

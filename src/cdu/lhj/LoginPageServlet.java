@@ -11,15 +11,15 @@ public class LoginPageServlet extends HttpServlet {
         //读取cookie
         String username = "";
         String password = "";
-        Cookie[] cookies = request.getCookies();
-        for (Cookie c : cookies) {
-            if (c.getName().equals("username")) {
-                username = c.getValue();
-            }
-            if (c.getName().equals("password")) {
-                password = c.getValue();
-            }
-        }
+//        Cookie[] cookies = request.getCookies();
+//        for (Cookie c : cookies) {
+//            if (c.getName().equals("username")) {
+//                username = c.getValue();
+//            }
+//            if (c.getName().equals("password")) {
+//                password = c.getValue();
+//            }
+//        }
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();

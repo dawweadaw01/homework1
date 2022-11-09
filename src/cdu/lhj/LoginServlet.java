@@ -51,11 +51,11 @@ public class LoginServlet extends HttpServlet {
         }
         //判断账号密码是否正确
         User user = userDao.loginCheck(username, password);
+        System.out.println(username + password);
         System.out.println(user);
         if (user != null) {
             //账号密码正确
             response.sendRedirect("success");
-            return;
         } else {
             //账号密码错误
             response.sendRedirect("loginPage");

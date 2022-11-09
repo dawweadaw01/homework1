@@ -1,5 +1,9 @@
 package cdu.lhj;
 
+import cdu.lhj.dao.UserDao;
+import cdu.lhj.dao.impl.UserDaoImpl;
+import cdu.lhj.model.User;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -9,6 +13,8 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        UserDao userDao = new UserDaoImpl();
         request.setCharacterEncoding("UTF-8");
         //得到用户输入的验证码和账号密码
         String inputCode = request.getParameter("inputCode");
@@ -44,7 +50,9 @@ public class LoginServlet extends HttpServlet {
             return;
         }
         //判断账号密码是否正确
-        if (username.equals("cxk") && password.equals("666")) {
+        User user = userDao.loginCheck(username, password);
+        System.out.println(user);
+        if (user != null) {
             //账号密码正确
             response.sendRedirect("success");
             return;
